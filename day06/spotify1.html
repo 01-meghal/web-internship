@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-black text-white">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spotify Clone</title>
+  <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css&quot;
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+</head>
+<body class="font-sans bg-black">
+    <nav class="bg-black text-white px-4 py-2 flex items-center justify-between">
+  <!-- Left: Spotify logo and Home icon -->
+  <div class="flex items-center space-x-4">
+    <!-- Spotify Logo -->
+    <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" alt="Spotify" class="h-6 w-6">
+
+    <!-- Home Icon -->
+    <div class="bg-gray-800 p-2 rounded-full">
+      <svg class="h-4 w-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M3 10L12 2l9 8v10a2 2 0 0 1-2 2h-5v-6H10v6H5a2 2 0 0 1-2-2V10z"/>
+      </svg>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="flex items-center bg-[#1e1e1e] px-4 py-2 rounded-full w-[400px]">
+      <svg class="h-4 w-4 text-gray-400 mr-2" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M10 2a8 8 0 1 0 5.293 14.293l4.707 4.707 1.414-1.414-4.707-4.707A8 8 0 0 0 10 2zm0 2a6 6 0 1 1 0 12 6 6 0 0 1 0-12z"/>
+      </svg>
+      <input type="text" placeholder="What do you want to play?" class="bg-transparent outline-none text-white text-sm flex-1 placeholder-gray-400">
+      <div class="border-l border-gray-600 h-5 mx-3"></div>
+      <svg class="h-4 w-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M3 3h18v18H3z"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Right: Nav Links -->
+  <div class="flex items-center space-x-6 text-sm text-gray-400 font-medium">
+    <a href="#" class="hover:text-white">Premium</a>
+    <a href="#" class="hover:text-white">Support</a>
+    <a href="#" class="hover:text-white">Download</a>
+    <div class="h-4 w-px bg-gray-600"></div>
+    <a href="#" class="flex items-center space-x-1 hover:text-white">
+      <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M12 5v14m7-7H5"/>
+      </svg>
+      <span>Install App</span>
+    </a>
+    <a href="#" class="hover:text-white">Sign up</a>
+    <a href="#" class="bg-white text-black px-4 py-1 rounded-full font-semibold hover:bg-gray-200">Log in</a>
+  </div>
+</nav>
+
+
+  <!-- Main Layout -->
+  <div class="flex h-screen">
+
+    <!-- Sidebar -->
+    <aside class="w-72 bg-[#121212] p-4 flex flex-col justify-between">
+      <div>
+        <!-- Your Library Header -->
+        <div class="flex justify-between items-center mb-6">
+          <h2 class="text-lg font-semibold">Your Library</h2>
+          <button class="text-2xl">+</button>
+        </div>
+
+        <!-- Playlist Card -->
+        <div class="bg-neutral-800 p-4 rounded-lg mb-4">
+          <h3 class="text-white font-semibold mb-1">Create your first playlist</h3>
+          <p class="text-sm text-gray-300 mb-4">It's easy, we'll help you</p>
+          <button class="bg-white text-black px-4 py-1.5 rounded-full font-semibold text-sm">Create playlist</button>
+        </div>
+
+        <!-- Podcast Card -->
+        <div class="bg-neutral-800 p-4 rounded-lg">
+          <h3 class="text-white font-semibold mb-1">Let's find some podcasts to follow</h3>
+          <p class="text-sm text-gray-300 mb-4">We'll keep you updated on new episodes</p>
+          <button class="bg-white text-black px-4 py-1.5 rounded-full font-semibold text-sm">Browse podcasts</button>
+        </div>
+      </div>
+
+      <!-- Sidebar Footer -->
+      <div class="text-xs text-gray-400 mt-6 space-y-4">
+        <div class="flex flex-wrap gap-2">
+          <a href="#" class="hover:underline">Legal</a>
+          <a href="#" class="hover:underline">Safety & Privacy Center</a>
+          <a href="#" class="hover:underline">Privacy Policy</a>
+          <a href="#" class="hover:underline">Cookies</a>
+          <a href="#" class="hover:underline">About Ads</a>
+          <a href="#" class="hover:underline">Accessibility</a>
+        </div>
+        <a href="#" class="text-blue-400 hover:underline block">Cookies</a>
+        <button class="flex items-center gap-2 border border-gray-500 px-3 py-1.5 rounded-full text-white hover:border-white">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2a10 10 0 100 20 10 10 0 000-20z" />
+          </svg>
+          English
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-6 overflow-y-auto bg-black">
+      <!-- Trending Songs -->
+      <div class="mb-8">
+        <div class="flex justify-between items-center mb-4">
+          <h2 class="text-xl font-semibold">Trending songs</h2>
+          <a href="#" class="text-sm text-gray-300 hover:underline">Show all</a>
+        </div>
+        <div class="flex gap-6 overflow-x-auto">
+          <!-- Song Cards -->
+          <div class="bg-neutral-800 rounded-lg p-3 w-50 shrink-0">
+            <img src="./hq720.jpg" alt="Cover" class="rounded mb-2" />
+            <h3 class="font-semibold text-sm">Courtside</h3>
+            <p class="text-xs text-gray-400">Karan Aujla</p>
+          </div>
+           <div class="bg-neutral-800 rounded-lg p-3 w-50 shrink-0">
+            <img src="./maxresdefault.jpg" alt="Cover" class="rounded mb-2" />
+            <h3 class="font-semibold text-sm">Laal Pari</h3>
+            <p class="text-xs text-gray-400">Yo Yo Honey Singh</p>
+          </div>
+           <div class="bg-neutral-800 rounded-lg p-3 w-50 shrink-0">
+            <img src="./hq720.jpg" alt="Cover" class="rounded mb-2" />
+            <h3 class="font-semibold text-sm">Courtside</h3>
+            <p class="text-xs text-gray-400">Karan Aujla</p>
+          </div>
+          <div class="bg-neutral-800 rounded-lg p-3 w-50 shrink-0">
+            <img src="./maxresdefault.jpg" alt="Cover" class="rounded mb-2" />
+            <h3 class="font-semibold text-sm">Laal Pari</h3>
+            <p class="text-xs text-gray-400">Yo Yo Honey Singh</p>
+          </div>
+           <div class="bg-neutral-800 rounded-lg p-3 w-50 shrink-0">
+            <img src="./hq720.jpg" alt="Cover" class="rounded mb-2" />
+            <h3 class="font-semibold text-sm">Courtside</h3>
+            <p class="text-xs text-gray-400">Karan Aujla</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Popular Artists -->
+      <div>
+        <div class="flex justify-between items-center mb-4">
+          <h2 class="text-xl font-semibold">Popular artists</h2>
+          <a href="#" class="text-sm text-gray-300 hover:underline">Show all</a>
+        </div>
+        <div class="flex gap-8 overflow-x-auto">
+          <!-- Artist Circles -->
+          <img class="w-50 h-50 rounded-full object-cover" src="./karan-aujla.avif" alt="Artist" />
+          <img class="w-50 h-50 rounded-full object-cover" src="./download.jpg" alt="Artist" />
+          <img class="w-50 h-50 rounded-full object-cover" src="./1584192010_4.jpg" alt="Artist" />
+          <img class="w-50 h-50 rounded-full object-cover" src="./rs_Pritam-3.jpg" alt="Artist" />
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Bottom Banner -->
+  <footer class="bg-gradient-to-r from-purple-800 to-blue-600 px-6 py-4 text-white flex justify-between items-center text-sm">
+    <div>
+      <p class="font-semibold">Preview of Spotify</p>
+      <p>Sign up to get unlimited songs and podcasts with occasional ads. No credit card needed.</p>
+    </div>
+    <button class="bg-white text-black px-6 py-2 rounded-full font-bold">Sign up free</button>
+  </footer>
+ <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</body>
+</html>
