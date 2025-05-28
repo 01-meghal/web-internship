@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let percent = parseFloat(prompt("enter your percentage"));
+        
+
+        switch (true) {
+            case (percent > 80 && percent <= 100):
+                alert("grade O");
+                break;
+
+            case (percent > 60 && percent <= 80):
+                alert("grade A");
+                break;
+
+            case (percent>45 && percent<=60):
+                alert("grade B");
+                break;
+
+            case (percent>33 && percent<=45):
+                alert("grade c");
+                break;
+
+            case (percent<33):
+                alert("grade fail");
+                break;
+
+            default:
+                alert("invalid");
+                break;
+
+        }
+
+    </script>
+</body>
+
+</html>
